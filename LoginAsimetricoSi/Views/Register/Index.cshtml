@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Registro";
+}
+
+<script src="~/Scripts/Register/Register.js"></script>
+
+<style>
+    .inputF:focus {
+        outline: 0;
+    }
+
+    .buttonEnviar {
+        width: 12rem;
+        height: 3rem;
+        border: 2px #6d7578 solid;
+        background-color: #8b9e9b;
+        border-radius: 5px;
+        color: white;
+    }
+</style>
+
+<div class="d-flex justify-content-center align-items-center flex-column" style="height: 100%;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Logo_del_SAT.svg/1200px-Logo_del_SAT.svg.png" alt="Archivo:Logo del SAT.svg - Wikipedia, la enciclopedia libre" class="w-25 mb-3"/>
+    <div class="card d-flex align-items-center" style="width: 50rem; height: 55rem;">
+        <div class="d-flex flex-column" style="width:70%; height: 100%;">
+            <form action="/Register/Registrarse" method="post" id="formRegister">
+                <div class="d-flex flex-column" style="width: 100%; margin-top: 15%;">
+                    <label for="UserName">Nombre</label>
+                    <input required id="UserName" class="border-0 border-bottom border-1 border-warning inputF" type="text" name="UserName" style="width: 100%; max-width:100%;" />
+                </div>
+                <div class="d-flex flex-column" style="width: 100%; margin-top: 15%;">
+                    <label for="Email">Email</label>
+                    <input required id="Email" class="border-0 border-bottom border-1 border-warning inputF" type="email" name="Email" style="width: 100%; max-width:100%;" />
+                </div>
+                <div class="d-flex flex-column" style="width: 100%; margin-top: 15%;">
+                    <label for="Contrasena">Contraseña</label>
+                    <input required id="Contrasena" class="border-0 border-bottom border-1 border-warning inputF" type="password" name="Password" style="width: 100%; max-width:100%;" />
+                </div>
+                <div class="d-flex flex-column" style="width: 100%; margin-top: 15%;">
+                    <label for="ContrasenaRepetir">Repita Contraseña</label>
+                    <input required id="ContrasenaRepetir" class="border-0 border-bottom border-1 border-warning inputF" type="password" name="RePassword" style="width: 100%; max-width:100%;" />
+                </div>
+                <div class="d-flex justify-content-center" style=" margin-top: 15%;">
+                    <input class="buttonEnviar" type="submit" name="Button" value="Registrarse" onclick="Registrarse()" />
+                </div>
+            </form>
+            <div style=" margin-top: 10%;" class="d-flex justify-content-center">
+                @Html.ActionLink("¿Ya tiene una cuenta? Iniciar sesión", "Index", "Login")
+            </div>
+        </div>
+    </div>
+</div>
